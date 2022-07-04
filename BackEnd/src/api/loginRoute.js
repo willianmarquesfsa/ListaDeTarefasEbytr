@@ -1,10 +1,9 @@
 const express = require('express');
-const tarefasFindOne = require('../controllers/loginController/userFindOne');
-// const tarefasInsert = require('../controllers/tarefasControllers/tarefasInsert');
+const bcryptPassword = require('../auth/bcryptPassword');
+const generateLogin = require('../auth/generateLogin');
 
 const loginRoutes = express.Router();
 
-loginRoutes.get('/login/:id', tarefasFindOne);
-loginRoutes.post('/login');
+loginRoutes.post('/login', bcryptPassword, generateLogin);
 
 module.exports = loginRoutes;
