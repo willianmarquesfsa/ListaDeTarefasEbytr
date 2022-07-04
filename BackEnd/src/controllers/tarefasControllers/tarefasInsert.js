@@ -1,4 +1,4 @@
-const { Tarefas } = require('../models');
+const { Tarefas } = require('../../models');
 
 module.exports = async (req, res) => {
   const { body } = req;

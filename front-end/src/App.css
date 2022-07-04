@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  
+}
+
+.box {
+  border-style:solid;
+  color: #64B83E;   
+} 
+
+.header, .box {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  
+}
