@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-import getTasks from '../service/tarefasApi';
+import PropTypes from 'prop-types';
+import getTasks from '../service/getTasks';
 import Header from '../componets/Header';
 
 export default class PainelTarefas extends Component {
@@ -29,8 +29,8 @@ export default class PainelTarefas extends Component {
 
         return (
             <div >
-                <Header/>
-                {lista.map((ele) => <div className="box">
+                <Header sair={ this.props.sair }/>
+                {lista.map((ele, i) => <div key={i} className="box">
                 <p>Atribuido a: {ele.name}</p>
                 <p>Descrição: {ele.describe}</p>
                 <p>Status: {ele.status}</p>
@@ -43,3 +43,6 @@ export default class PainelTarefas extends Component {
     }
 }
 
+PainelTarefas.propTypes = {
+    sair: PropTypes.func.isRequired,
+};
