@@ -35,7 +35,8 @@ export default class Login extends Component {
         this.setState({ carregando: true });
         try {
             const result = await loginValidate({ email, password });
-            window.localStorage.setItem('token', result.data.token)
+            console.log(result)
+            // localStorage.setItem('token', result.data.token)
             mudarlogado();
         } catch (error) {
             console.error(error);

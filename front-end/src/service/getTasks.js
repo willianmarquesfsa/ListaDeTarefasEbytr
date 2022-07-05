@@ -5,7 +5,7 @@ const getTasks = async () => {
         const response = await api.get('/tarefas',     
          {
             headers: {
-              'Authorization': `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoid2lsbGlhbkBhZG1pbi5jb20iLCJwYXNzd29yZCI6Im9pb2lvaSJ9LCJpYXQiOjE2NTY5NjM2NjksImV4cCI6MTY1NzU2ODQ2OX0.UrmrpvDcjEKEDojrzOD_ZvJmb6waeWsC29S0RF08Pw0` 
+              'Authorization': localStorage.getItem('token')
             } //capturar localstorege
           });
         return response;

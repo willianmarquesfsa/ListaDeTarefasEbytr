@@ -13,7 +13,7 @@ class App extends Component {
     super();
     
     this.state = {
-      logado: false      
+      logado: true      
     };
   }
 
@@ -22,7 +22,8 @@ class App extends Component {
   }
 
   loginValidatee = async () => {
-    if(window.localStorage.getItem('token') !== '')  {
+    if(localStorage.getItem('token') !== '')  {
+      console.log(localStorage.getItem('token'))
     const result = await loginValidate();
     if(result.data.login === 'ok') {
        this.mudarlogado()
@@ -31,13 +32,15 @@ class App extends Component {
   }
 
   mudarlogado = () => {
+    console.log('foi')
+    // this.loginValidatee() 
     localStorage.setItem('logado', true);
     this.setState({ logado: true });
   };
 
   sair = () => {
     localStorage.setItem('logado', false);
-    window.localStorage.setItem('token', '');
+    localStorage.setItem('token', '');
     this.setState({ logado: false });
   };
 
@@ -59,9 +62,9 @@ class App extends Component {
                 <Login mudarlogado={ this.mudarlogado } />
               )} 
       </Route>
-      
-      <Route exact path="/LoginCreate" render={ () => <LoginCreate mudarlogado={ this.mudarlogado }/> } />
-      
+      <Route path="/LoginCreate" render={ () => <LoginCreate mudarlogado={ this.mudarlogado }/> } />
+     
+           
       
     </div >
   );

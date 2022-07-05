@@ -5,7 +5,7 @@ const loginValidate = async (body) => {
         const response = await api.get('/login',     
         {
             headers: {
-              'Authorization': window.localStorage.getItem('token')
+              'Authorization': localStorage.getItem('token')
             }
           } );
         return response;
